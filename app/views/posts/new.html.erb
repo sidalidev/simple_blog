@@ -1,0 +1,9 @@
+<h1>New post</h1>
+
+<%= form_for @post do |f|%>
+  <%= f.text_field :title, placeholder: 'Title', autofocus: true %>
+  <br>
+  <%= f.text_area :body, placeholder: 'Body' %>
+  <br>
+  <%= f.submit 'Publish' %>
+<% end %>

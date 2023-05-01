@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <p style="color: green;">
+      <%= notice %>
+    </p>
+    <p style="color: red;">
+      <%= alert %>
+    </p>
+    <% if session[:user_id] %>
+      Logged in as <strong><%= User.find(session[:user_id]).email %></strong>.
+      <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Login", new_session_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

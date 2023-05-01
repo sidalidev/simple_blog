@@ -1,0 +1,17 @@
+<h1>
+  Posts
+</h1>
+
+<% if session[:user_id] %>
+  <%= link_to 'New post', new_post_path %>
+<% end %>
+<br>
+
+<ul>
+  <% @posts.each do |post|%>
+    <li>
+      <%= render post %>
+    </li>
+  <% end %>
+</ul>
+

@@ -1,0 +1,17 @@
+<div style="border: 1px grey solid; padding: 8px; margin: 8px;">
+  <h1>
+    <%= post.title %>
+  </h1>
+
+  <p>
+    <%= post.body %>
+  </p>
+
+  <br>
+  by <strong><%= post.user.email %></strong>
+
+  <% if session[:user_id] == post.user.id %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+  <% end %>
+  <%= link_to 'Show', post_path(post) %>
+<div>
